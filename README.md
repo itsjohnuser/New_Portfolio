@@ -36,7 +36,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Thanks to contributors and mentors who have supported my development journey.
 
 ## Contact
-For any inquiries, please contact me at [your-email@example.com].
+For any inquiries, please contact me at johnarumulla@gmail.com.
 
 ---
 *This README was generated on 2026-02-27 11:13:04 UTC.*
