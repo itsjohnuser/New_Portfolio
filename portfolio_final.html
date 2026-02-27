@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="JohnMark Arumulla - Software Engineer & AI Developer based in Hyderabad, India">
+<title>John Mark Arumulla | Software Engineer & AI Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="colors.css">
+<title>John Mark Arumulla | Software Engineer & AI Developer</title>
+<link rel="shortcut icon" href="./assests/letter-j.png" type="image/x-icon">
+</head>
+<body>
+
+<div id="c-dot"></div>
+<div id="c-ring"></div>
+<canvas id="particles-canvas"></canvas>
+
+<!-- ===== NAV ===== -->
+<nav id="navbar">
+  <!-- <a href="./assests/letter-j.png" class="nav-logo">John<span>.</span></a> -->
+  <img src="./assests/letter-j.png" alt="logo" with="40" height="50" class="nav-logo">
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#ai-section">AI Chat</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contact" class="nav-hire">Hire Me</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" onclick="closeMobile()">Home</a>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#skills" onclick="closeMobile()">Skills</a>
+  <a href="#portfolio" onclick="closeMobile()">Portfolio</a>
+  <a href="#ai-section" onclick="closeMobile()">AI Chat</a>
+  <a href="#blog" onclick="closeMobile()">Blog</a>
+  <a href="#contact" onclick="closeMobile()">Hire Me</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section id="home">
+  <div class="hero-content reveal">
+    <div class="hero-eyebrow"><span class="eyebrow-dot"></span>Available for Full-Time Roles</div>
+    <h1 class="hero-h1"><br><span class="hl">John Mark.</span></h1>
+    <div class="hero-role typing-cursor" id="heroRole">// Software Engineer · React & AI Developer</div>
+    <p class="hero-desc">Versatile Software Engineer specializing in React.js, JavaScript, and AI/ML. Building high-performance web applications and intelligent systems from Hyderabad, India.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn btn-primary">💬 Hire Me</a>
+      <a href="#portfolio" class="btn btn-secondary">View Projects →</a>
+      <a href="./assests/JohnMark Arumulla_resume.pdf" class="btn btn-secondary" style="font-size:.8rem;padding:9px 18px;" target="_blank" onclick="return true">⬇ Download CV</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card"><div class="stat-n">1.5+</div><div class="stat-l">Years Exp</div></div>
+      <div class="stat-card"><div class="stat-n">6+</div><div class="stat-l">Projects</div></div>
+      <div class="stat-card"><div class="stat-n">20%</div><div class="stat-l">Perf. Gain</div></div>
+    </div>
+  </div>
+  <div class="hero-visual reveal reveal-d2">
+    <div class="photo-wrap" style="position:relative">
+      <!-- AI Formula Floats -->
+      <div class="ai-formula-float">∇L = ∂E/∂w</div>
+      <div class="ai-formula-float">σ(x) = 1/(1+e⁻ˣ)</div>
+      <div class="ai-formula-float">y = Wx + b</div>
+      <div class="ai-formula-float">argmax P(y|x)</div>
+      <!-- Orbit rings -->
+      <div class="orbit-ring r1"><div class="orbit-dot"></div></div>
+      <div class="orbit-ring r2"><div class="orbit-dot"></div></div>
+      <div class="tech-float">
+        <div class="tf-chip">⚛️ React.js</div>
+        <div class="tf-chip">🤖 TensorFlow</div>
+        <div class="tf-chip">🐍 Python</div>
+      </div>
+      <div class="photo-glow"></div>
+      <div class="photo-inner">
+        <img src="./assests/photo.jpg" alt="John Mark Arumulla" class="photo-img">
+      </div>
+      <div class="photo-badge">
+        <div class="pb-avail"><div class="pb-dot"></div><span>Open to work</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="section">
+  <div class="max-w">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="sec-label">// About Me</div>
+        <div class="sec-title">Turning Ideas Into <span>Digital Reality</span></div>
+        <p class="about-desc">Creative and dedicated Software Engineer from Andhra Pradesh with expertise in frontend development, backend integration, and AI/ML systems. I build polished, scalable digital products that deliver measurable results.</p>
+        <p class="about-desc">After 1.5 years of building production-ready React apps at Datagaint IT Services, I deepened my AI expertise through intensive training at C-DAC — India's premier advanced computing institute — earning a certificate in HPC & Artificial Intelligence.</p>
+        <ul class="about-list">
+          <li>Reduced API response times by 20% through optimization in real production environments</li>
+          <li>Advanced AI training covering LLMs, GenAI, TensorFlow & HPC at C-DAC</li>
+          <li>Full SDLC experience: requirements → design → testing → deployment</li>
+          <li>Strong communicator with analytical thinking and team collaboration skills</li>
+        </ul>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="#contact" class="btn btn-primary">Get In Touch</a>
+          <a href="#portfolio" class="btn btn-secondary">See My Work</a>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="about-nums">
+          <div class="an-card"><div class="an-n">1.5+</div><div class="an-l">Years professional experience</div></div>
+          <div class="an-card"><div class="an-n">20%</div><div class="an-l">Response time improvement</div></div>
+          <div class="an-card"><div class="an-n">6+</div><div class="an-l">Projects delivered</div></div>
+          <div class="an-card"><div class="an-n">4</div><div class="an-l">Certifications earned</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS GRID ===== -->
+<section id="skills" class="section">
+  <div class="max-w">
+    <div class="sec-label">// Expertise</div>
+    <div class="sec-title">Skills & <span>Technologies</span></div>
+    <div class="skills-grid">
+      <div class="sk-card reveal"><div class="sk-icon">⚛️</div><h3>Frontend Development</h3><p>React.js with Hooks & Components, JavaScript ES6+, HTML5, CSS3, Bootstrap. High-performance responsive UIs with low-latency delivery.</p><div class="sk-bar-bg"><div class="sk-bar" style="width:90%"></div></div></div>
+      <div class="sk-card reveal reveal-d1"><div class="sk-icon">🤖</div><h3>AI / Machine Learning</h3><p>TensorFlow, Scikit-learn, Python for ML pipelines. Real-time image classification, data preprocessing with NumPy & Pandas.</p><div class="sk-bar-bg"><div class="sk-bar" style="width:78%"></div></div></div>
+      <div class="sk-card reveal reveal-d2"><div class="sk-icon">🔗</div><h3>APIs & Integration</h3><p>RESTful API design & integration. Optimized production workflows, automated testing with Jasmine, Git version control.</p><div class="sk-bar-bg"><div class="sk-bar" style="width:82%"></div></div></div>
+      <div class="sk-card reveal"><div class="sk-icon">🗄️</div><h3>Databases & Systems</h3><p>PostgreSQL, MySQL, Linux fundamentals, Cloud systems, High-Performance Computing from C-DAC advanced program.</p><div class="sk-bar-bg"><div class="sk-bar" style="width:65%"></div></div></div>
+      <div class="sk-card reveal reveal-d1"><div class="sk-icon">✨</div><h3>Generative AI & LLMs</h3><p>Large Language Models, Generative AI systems, AI agent workflows — hands-on through C-DAC HPC-AI coursework.</p><div class="sk-bar-bg"><div class="sk-bar" style="width:72%"></div></div></div>
+      <div class="sk-card reveal reveal-d2"><div class="sk-icon">🧪</div><h3>Testing & Quality</h3><p>Jasmine automated testing, code reviews, OOP principles, data structures & algorithms, performance optimization.</p><div class="sk-bar-bg"><div class="sk-bar" style="width:75%"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience" class="section">
+  <div class="max-w">
+    <div class="sec-label">// Career</div>
+    <div class="sec-title">Experience & <span>Education</span></div>
+    <div class="exp-layout">
+      <div class="exp-side reveal">
+        <p>My journey from B.Tech graduate to professional developer and AI engineer — combining hands-on internship experience with advanced AI training at India's premier computing institute.</p>
+        <div class="open-badge"><div class="avail-dot" style="background:var(--accent3)"></div>Immediately available</div>
+      </div>
+      <div class="timeline reveal reveal-d1">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">July 2023 – February 2025 · Vijayawada</div>
+          <div class="tl-role">Front-End Developer</div>
+          <div class="tl-company">Datagaint IT Services Pvt. Ltd.</div>
+          <ul class="tl-pts">
+            <li>Designed & maintained high-performance responsive web apps using React.js, HTML, CSS, JavaScript.</li>
+            <li>Integrated RESTful APIs, reducing response times by <strong>20%</strong> in production-like environments.</li>
+            <li>Contributed across all SDLC phases: requirements, design, implementation, testing, deployment.</li>
+            <li>Automated testing with Jasmine; participated in peer code reviews and architectural decisions.</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">August 2025 · C-DAC, India</div>
+          <div class="tl-role">Advanced Certificate – HPC & Artificial Intelligence</div>
+          <div class="tl-company">Centre for Development of Advanced Computing (C-DAC)</div>
+          <ul class="tl-pts">
+            <li>Intensive training in HPC, AI/ML systems, LLMs, and Generative AI workflows.</li>
+            <li>Built AI for Ocean Cleanup using TensorFlow & Scikit-learn for real-time waste detection.</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">2019 – 2023 · Gudur, Andhra Pradesh</div>
+          <div class="tl-role">B.Tech, Computer Science & Engineering</div>
+          <div class="tl-company">Audisankara Institute of Technology · CGPA: 7.1/10</div>
+          <ul class="tl-pts"><li>Core studies in algorithms, data structures, software engineering, OOP, and database systems.</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PORTFOLIO ===== -->
+<section id="portfolio" class="section">
+  <div class="max-w">
+    <div class="sec-label">// Work</div>
+    <div class="sec-title">My Amazing <span>Projects</span></div>
+    <div class="pf-filters">
+      <button class="pf-btn active" onclick="filterP('all',this)">All</button>
+      <button class="pf-btn" onclick="filterP('frontend',this)">Frontend</button>
+      <button class="pf-btn" onclick="filterP('ai',this)">AI / ML</button>
+      <button class="pf-btn" onclick="filterP('fullstack',this)">Full Stack</button>
+    </div>
+    <div class="proj-grid" id="projGrid">
+      <div class="proj-card reveal" data-cat="ai">
+        <div class="proj-thumb pt1">🌊</div>
+        <div class="proj-body">
+          <h3>AI for Ocean Cleanup & Waste Management</h3>
+          <div class="proj-tags"><span class="p-tag">Python</span><span class="p-tag">TensorFlow</span><span class="p-tag">Scikit-learn</span><span class="p-tag">NumPy</span><span class="p-tag">Pandas</span></div>
+          <p>ML models for real-time image classification and waste detection with optimized preprocessing pipelines for scalability.</p>
+        </div>
+      </div>
+      <div class="proj-card reveal reveal-d1" data-cat="fullstack">
+        <div class="proj-thumb pt2">🛒</div>
+        <div class="proj-body">
+          <h3>Amazon Clone – Full Stack E-Commerce</h3>
+          <div class="proj-tags"><span class="p-tag">React.js</span><span class="p-tag">JavaScript</span><span class="p-tag">REST APIs</span><span class="p-tag">CSS3</span></div>
+          <p>Full-stack responsive e-commerce with clean architecture, API integration, automated testing, and release-ready components.</p>
+        </div>
+      </div>
+      <div class="proj-card reveal reveal-d2" data-cat="frontend">
+        <div class="proj-thumb pt3">🍋</div>
+        <div class="proj-body">
+          <h3>Littlelemon Restaurant</h3>
+          <div class="proj-tags"><span class="p-tag">React.js</span><span class="p-tag">HTML</span><span class="p-tag">CSS</span></div>
+          <p>Restaurant web app with responsive design, menu display, and reservation features built with React components.</p>
+          <a href="https://littlelemo.netlify.app/" target="_blank" rel="noopener" class="proj-link">View Live ↗</a>
+        </div>
+      </div>
+      <div class="proj-card reveal" data-cat="frontend">
+        <div class="proj-thumb pt4">🛍️</div>
+        <div class="proj-body">
+          <h3>Myntra Clone</h3>
+          <div class="proj-tags"><span class="p-tag">HTML</span><span class="p-tag">CSS</span><span class="p-tag">JavaScript</span></div>
+          <p>E-commerce UI clone with product listings, category filters, cart functionality, and responsive mobile layout.</p>
+          <a href="https://myntraclone2024.netlify.app/" target="_blank" rel="noopener" class="proj-link">View Live ↗</a>
+        </div>
+      </div>
+      <div class="proj-card reveal reveal-d1" data-cat="frontend">
+        <div class="proj-thumb pt5">🎬</div>
+        <div class="proj-body">
+          <h3>MovieSearch App</h3>
+          <div class="proj-tags"><span class="p-tag">JavaScript</span><span class="p-tag">REST API</span><span class="p-tag">HTML/CSS</span></div>
+          <p>Movie search integrating a public API to fetch and display real-time movie data, ratings, and details.</p>
+          <a href="https://cute-kataifi-ce8642.netlify.app/" target="_blank" rel="noopener" class="proj-link">View Live ↗</a>
+        </div>
+      </div>
+      <div class="proj-card reveal reveal-d2" data-cat="frontend">
+        <div class="proj-thumb pt6">💱</div>
+        <div class="proj-body">
+          <h3>Exchange Rate Calculator</h3>
+          <div class="proj-tags"><span class="p-tag">JavaScript</span><span class="p-tag">REST API</span><span class="p-tag">CSS</span></div>
+          <p>Real-time currency exchange calculator with live exchange rate API for accurate multi-currency conversions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILL BARS ===== -->
+<section id="skill-bars" class="section">
+  <div class="max-w">
+    <div class="sec-label">// Proficiency</div>
+    <div class="sec-title">I Develop Skills <span>Regularly</span></div>
+    <div class="bars-grid">
+      <div class="bar-row reveal"><div class="bar-lbl"><span>HTML5 / CSS3</span><span>95%</span></div><div class="bar-bg"><div class="bar-fill" style="width:95%"></div></div></div>
+      <div class="bar-row reveal reveal-d1"><div class="bar-lbl"><span>JavaScript ES6+</span><span>85%</span></div><div class="bar-bg"><div class="bar-fill" style="width:85%"></div></div></div>
+      <div class="bar-row reveal"><div class="bar-lbl"><span>React.js</span><span>82%</span></div><div class="bar-bg"><div class="bar-fill" style="width:82%"></div></div></div>
+      <div class="bar-row reveal reveal-d1"><div class="bar-lbl"><span>Bootstrap / Tailwind</span><span>90%</span></div><div class="bar-bg"><div class="bar-fill" style="width:90%"></div></div></div>
+      <div class="bar-row reveal"><div class="bar-lbl"><span>Python</span><span>75%</span></div><div class="bar-bg"><div class="bar-fill" style="width:75%"></div></div></div>
+      <div class="bar-row reveal reveal-d1"><div class="bar-lbl"><span>TensorFlow / ML</span><span>70%</span></div><div class="bar-bg"><div class="bar-fill" style="width:70%"></div></div></div>
+      <div class="bar-row reveal"><div class="bar-lbl"><span>MySQL / PostgreSQL</span><span>65%</span></div><div class="bar-bg"><div class="bar-fill" style="width:65%"></div></div></div>
+      <div class="bar-row reveal reveal-d1"><div class="bar-lbl"><span>GenAI / LLMs</span><span>68%</span></div><div class="bar-bg"><div class="bar-fill" style="width:68%"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AI CHAT ===== -->
+<section id="ai-section" class="section">
+  <canvas id="matrix-canvas"></canvas>
+  <div class="ai-section-content">
+  <div class="max-w">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="sec-label">// AI Powered Feature</div>
+      <div class="sec-title" style="margin-bottom:10px">Ask About <span>John Mark</span></div>
+      <p style="color:var(--muted);font-size:.9rem">Chat with an AI that knows everything about my skills, experience & projects.</p>
+    </div>
+    <div class="ai-wrap">
+      <div class="ai-head">
+        <div class="ai-dot r"></div><div class="ai-dot y"></div><div class="ai-dot g"></div>
+        <span class="ai-title">portfolio-ai</span>
+      </div>
+      <div class="ai-msgs" id="aiMsgs">
+        <div class="cmsg ai">
+          <div class="cav ai">AI</div>
+          <div class="cbub">Hi! 👋 I'm John Mark's portfolio AI. Ask me anything about his skills, experience, projects, or why you should hire him!</div>
+        </div>
+      </div>
+      <div class="ai-quick" id="aiQuick">
+        <button class="aq" onclick="sendAQ('What are John Mark\'s strongest skills?')">💡 Strongest skills?</button>
+        <button class="aq" onclick="sendAQ('Is he good for a React Developer role?')">⚛️ React role fit?</button>
+        <button class="aq" onclick="sendAQ('Tell me about his AI/ML experience')">🤖 AI/ML experience?</button>
+        <button class="aq" onclick="sendAQ('Why should I hire John Mark?')">🎯 Why hire him?</button>
+      </div>
+      <div class="ai-input-row">
+        <input class="ai-in" id="aiIn" placeholder="Ask about skills, projects, experience..." />
+        <button class="ai-send" onclick="sendAI()">Send →</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ===== CERTIFICATIONS ===== -->
+<section id="certifications" class="section">
+  <div class="max-w">
+    <div class="sec-label">// Credentials</div>
+    <div class="sec-title">Professional <span>Certifications</span></div>
+    <div class="certs-grid">
+      <div class="cert-card reveal"><div class="cert-ico">🪟</div><div><h4>SOAR – AI for Educators</h4><p>Microsoft · December 2025</p></div></div>
+      <div class="cert-card reveal reveal-d1"><div class="cert-ico">📘</div><div><h4>Meta Front-End Developer Professional</h4><p>Coursera · July 2024</p><div class="cert-grade">✓ 87–100% across all 9 courses</div></div></div>
+      <div class="cert-card reveal reveal-d2"><div class="cert-ico">🔬</div><div><h4>Advanced Certificate HPC-AI</h4><p>C-DAC · August 2025</p></div></div>
+      <div class="cert-card reveal"><div class="cert-ico">⚡</div><div><h4>JavaScript Algorithms & Data Structures</h4><p>freeCodeCamp · Certified</p></div></div>
+      <div class="cert-card reveal reveal-d1"><div class="cert-ico">🌐</div><div><h4>Full Stack Web Development</h4><p>Udemy · January 2023</p></div></div>
+      <div class="cert-card reveal reveal-d2"><div class="cert-ico">🏅</div><div><h4>JavaScript Basics</h4><p>HackerRank · Verified</p></div></div>
+    </div>
+    <div class="meta-courses reveal" style="margin-top:24px">
+      <h4>Meta Front-End Developer — Individual Course Grades</h4>
+      <div class="mc-grid">
+        <div class="mc-item"><span>Introduction to Front-End Dev</span><span class="mc-grade">99%</span></div>
+        <div class="mc-item"><span>Version Control</span><span class="mc-grade">100%</span></div>
+        <div class="mc-item"><span>Programming with JavaScript</span><span class="mc-grade">94.5%</span></div>
+        <div class="mc-item"><span>HTML and CSS in Depth</span><span class="mc-grade">88%</span></div>
+        <div class="mc-item"><span>React Basics</span><span class="mc-grade">90%</span></div>
+        <div class="mc-item"><span>Advanced React</span><span class="mc-grade">88.1%</span></div>
+        <div class="mc-item"><span>Principles of UX/UI Design</span><span class="mc-grade">92.7%</span></div>
+        <div class="mc-item"><span>Front-End Developer Capstone</span><span class="mc-grade">89%</span></div>
+        <div class="mc-item"><span>Coding Interview Preparation</span><span class="mc-grade">87.5%</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BLOG (Current Tech News) ===== -->
+<section id="blog" class="section">
+  <div class="max-w">
+    <div class="sec-label">// Latest Tech & My Thoughts</div>
+    <div class="sec-title">Blog & <span>Tech News</span></div>
+    <div class="blog-tabs">
+      <button class="blog-tab active" onclick="filterBlog('all',this)">All</button>
+      <button class="blog-tab" onclick="filterBlog('news',this)">🔥 Tech News 2026</button>
+      <button class="blog-tab" onclick="filterBlog('thoughts',this)">✍️ My Articles</button>
+    </div>
+    <div class="blog-grid" id="blogGrid">
+
+      <!-- TECH NEWS CARDS (current Feb 2026 news) -->
+      <div class="blog-card featured reveal" data-bcat="news">
+        <div class="blog-thumb bt1">🧠</div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="blog-tag">AI News</span><span>Feb 26, 2026</span></div>
+          <h3>Claude Opus 4.6 Takes #1 Spot — 80.8% SWE-Bench & 1M Token Context Window</h3>
+          <p>Anthropic's Claude Opus 4.6 debuts as the new technical leader in AI development tools, surpassing rivals with a 1 million token context window (beta) and groundbreaking coding performance.</p>
+          <a href="https://blog.logrocket.com/ai-dev-tool-power-rankings/" target="_blank" rel="noopener" class="blog-read">Read Full Story ↗</a>
+          <div class="news-source">Source: LogRocket · Feb 2026</div>
+        </div>
+      </div>
+
+      <div class="blog-card reveal reveal-d1" data-bcat="news">
+        <div class="blog-thumb bt2">⚡</div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="blog-tag">AI Industry</span><span>Feb 26, 2026</span></div>
+          <h3>NVIDIA Posts Record $68.1B Revenue — AI Compute Demand Remains Intense</h3>
+          <p>NVIDIA's quarterly results underscore that demand for AI compute remains at historic highs, as hyperscalers race to build both training and inference capacity.</p>
+          <a href="https://techstartups.com/2026/02/26/top-tech-news-today-february-26-2026/" target="_blank" rel="noopener" class="blog-read">Read Full Story ↗</a>
+          <div class="news-source">Source: Tech Startups · Feb 2026</div>
+        </div>
+      </div>
+
+      <div class="blog-card reveal reveal-d2" data-bcat="news">
+        <div class="blog-thumb bt3">🌐</div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="blog-tag">Web Dev</span><span>Feb 2026</span></div>
+          <h3>Web Dev in 2026: AI-First Development Becomes the New Standard</h3>
+          <p>Over 81% of developers now report increased productivity with AI tools. Meta-frameworks like Next.js and TypeScript have become professional defaults, while plain JS is increasingly legacy.</p>
+          <a href="https://talent500.com/blog/web-development-trends-2026/" target="_blank" rel="noopener" class="blog-read">Read Full Story ↗</a>
+          <div class="news-source">Source: Talent500 · Feb 2026</div>
+        </div>
+      </div>
+
+      <div class="blog-card reveal" data-bcat="news">
+        <div class="blog-thumb bt4">🤝</div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="blog-tag">AI Ecosystem</span><span>Feb 7, 2026</span></div>
+          <h3>MCP (Model Context Protocol) Goes to Linux Foundation — OpenAI, Google & Microsoft All Adopt</h3>
+          <p>Anthropic's Model Context Protocol — donated to the Linux Foundation — is now adopted by OpenAI, Microsoft, and Google, making it the universal standard for AI tool integration.</p>
+          <div class="news-source">Source: Tech Roundup · Feb 2026</div>
+        </div>
+      </div>
+
+      <!-- ORIGINAL BLOG ARTICLES -->
+      <div class="blog-card reveal reveal-d1" data-bcat="thoughts">
+        <div class="blog-thumb bt5">🌐</div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="blog-tag">Web Development</span><span>15 Sep</span></div>
+          <h3>The Evolution of Web Development & Its Modern Trends</h3>
+          <p>From static HTML to AI-generated components — an exploration of how web development has transformed and where the ecosystem is headed in 2026 and beyond.</p>
+          <a href="#" class="blog-read">Read More →</a>
+        </div>
+      </div>
+
+      <div class="blog-card reveal reveal-d2" data-bcat="thoughts">
+        <div class="blog-thumb bt6">🎨</div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="blog-tag">Branding</span><span>23 Dec</span></div>
+          <h3>The Role of Branding in Web Development</h3>
+          <p>Creating a memorable online presence goes far beyond a nice logo — it's about cohesive identity, consistency across platforms, and emotional connection with your audience.</p>
+          <a href="#" class="blog-read">Read More →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section">
+  <div class="max-w">
+    <div class="sec-label">// Get In Touch</div>
+    <div class="sec-title">I Want To <span>Hear From You</span></div>
+    <p style="color:var(--muted);font-size:.95rem;line-height:1.8;max-width:580px;margin-bottom:36px;">I'm actively looking for full-time opportunities in Frontend Development or AI/ML Engineering. Based in Hyderabad — open to onsite, hybrid, or remote roles across India.</p>
+    <div class="contact-cards-grid">
+      <a href="mailto:johnarumulla@gmail.com" class="ci contact-card-anim">
+        <div class="ci-ico">📧</div>
+        <div><div class="ci-sub">Email</div><div class="ci-val">johnarumulla@gmail.com</div></div>
+      </a>
+      <a href="tel:+918142421367" class="ci contact-card-anim">
+        <div class="ci-ico">📱</div>
+        <div><div class="ci-sub">Phone</div><div class="ci-val">+91 8142421367</div></div>
+      </a>
+      <a href="https://www.linkedin.com/in/johnmarkarumulla/" target="_blank" rel="noopener" class="ci contact-card-anim">
+        <div class="ci-ico">💼</div>
+        <div><div class="ci-sub">LinkedIn</div><div class="ci-val">linkedin.com/in/johnmarkarumulla</div></div>
+      </a>
+      <div class="ci contact-card-anim" style="cursor:default">
+        <div class="ci-ico">📍</div>
+        <div><div class="ci-sub">Location</div><div class="ci-val">Hyderabad, India</div></div>
+      </div>
+    </div>
+    <div style="margin-top:28px"><div class="avail-pill"><div class="avail-dot"></div>Available for immediate joining — Zero notice period</div></div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-logo">John<span>.</span></div>
+  <p>Developed with ❤️ by JohnMark Arumulla · © 2026</p>
+  <div class="footer-links">
+    <a href="/cdn-cgi/l/email-protection#402a2f282e2132352d352c2c2100272d21292c6e232f2d">Email</a>
+    <a href="https://www.linkedin.com/in/johnmarkarumulla/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://john-2026.netlify.app/" target="_blank" rel="noopener">Live Site</a>
+  </div>
+</footer>
+
+<button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle day/night mode" title="Toggle Day/Night Mode">
+  <span class="theme-icon" id="theme-icon">🌙</span>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
