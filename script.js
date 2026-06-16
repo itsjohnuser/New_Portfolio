@@ -13,7 +13,13 @@ const canvas=document.getElementById("particles-canvas");
 const ctx=canvas.getContext("2d");
 let W=canvas.width=window.innerWidth,H=canvas.height=window.innerHeight;
 window.addEventListener("resize",()=>{W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight});
+
+// Theme-aware particle colors
+window._particleColor = "rgba(108,99,255,.6)";
+window._lineColor = "rgba(108,99,255,";
+
 const pts=Array.from({length:55},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.5+.5,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35}));
+
 function drawParticles(){
   ctx.clearRect(0,0,W,H);
   pts.forEach(p=>{
@@ -21,11 +27,16 @@ function drawParticles(){
     if(p.x<0)p.x=W;if(p.x>W)p.x=0;
     if(p.y<0)p.y=H;if(p.y>H)p.y=0;
     ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fillStyle="rgba(108,99,255,.6)";ctx.fill();
+    ctx.fillStyle=window._particleColor;
+    ctx.fill();
   });
   pts.forEach((a,i)=>pts.slice(i+1).forEach(b=>{
     const d=Math.hypot(a.x-b.x,a.y-b.y);
-    if(d<120){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle="rgba(108,99,255,"+(0.15*(1-d/120))+")";ctx.lineWidth=.5;ctx.stroke();}
+    if(d<120){
+      ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);
+      ctx.strokeStyle=window._lineColor + (0.15*(1-d/120))+")";
+      ctx.lineWidth=.5;ctx.stroke();
+    }
   }));
   requestAnimationFrame(drawParticles);
 }
@@ -36,7 +47,6 @@ const navbar=document.getElementById("navbar");
 const sections=document.querySelectorAll("section,[id]");
 window.addEventListener("scroll",()=>{
   navbar.classList.toggle("scrolled",window.scrollY>50);
-  document.getElementById("back-top").classList.toggle("show",window.scrollY>400);
   let cur="";
   sections.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur=s.id});
   document.querySelectorAll(".nav-links a").forEach(a=>{
@@ -90,7 +100,7 @@ function filterBlog(cat,btn){
   });
 }
 
-// ── AI CHAT — Smart Knowledge Base (CORS-safe, zero API key needed) ──
+// ── AI CHAT — Smart Knowledge Base ──
 const KB = [
   {
     k:["skill","technology","tech stack","know","expertise","use","proficient","tools"],
@@ -110,7 +120,7 @@ const KB = [
   },
   {
     k:["project","portfolio","wekeza","chimcare","ocean","komhar","built","stock"],
-    a:"Featured projects: Komhar (Professional Services), Wekeza (Multilingual Fintech with live stock data), Chimcare (US Commercial Infrastructure across 15 states), and AI Ocean Cleanup Visualizer."
+    a:"Featured projects: Komhar (Professional Services), Wekeza (Multilingual Fintech with live stock data), Chimcare (US Commercial Infrastructure across 15 states), and AI for Ocean Cleanup Visualizer."
   },
   {
     k:["certif","meta","microsoft","udemy","july","2024","2025","2023"],
@@ -136,15 +146,14 @@ function getAIReply(txt) {
     if (entry.k.some(k => t.includes(k))) return entry.a;
   }
   const fallbacks = [
-    "Great question! John Mark is a Frontend Engineer specializing in React.js and UI optimization, based in Hyderabad with 2+ years of experience. He's immediately available for full-time roles. Try asking about his skills, projects, certifications, or why you should hire him!",
+    "Great question! John Mark is a Frontend Engineer specializing in React.js and UI optimization, based in Hyderabad with 2+ years of experience. Try asking about his skills, projects, certifications, or why you should hire him!",
     "I'd be happy to help! John Mark combines React.js frontend expertise with high-concurrency data visualization skills. Ask me about his technical skills, work experience at Voola, projects like Komhar, or how to get in touch.",
-    "John Mark is a performance-driven developer ready to join your team immediately! Ask me: 'What are his skills?', 'Tell me about his Voola experience', 'Why should I hire him?', or 'How do I contact him?'"
+    "John Mark is a performance-driven developer ready to join your team immediately! Try asking about his Voola experience or his React skills."
   ];
   return fallbacks[Math.floor(Math.random() * fallbacks.length)];
 }
 
 let aiBusy = false;
-
 function addAIMsg(role, text) {
   const d = document.createElement("div");
   d.className = "cmsg " + role;
@@ -152,7 +161,6 @@ function addAIMsg(role, text) {
   document.getElementById("aiMsgs").appendChild(d);
   document.getElementById("aiMsgs").scrollTop = 99999;
 }
-
 function showTyping() {
   const d = document.createElement("div");
   d.className = "cmsg ai";
@@ -161,11 +169,7 @@ function showTyping() {
   document.getElementById("aiMsgs").appendChild(d);
   document.getElementById("aiMsgs").scrollTop = 99999;
 }
-
-function rmTyping() {
-  const t = document.getElementById("aiTyping");
-  if (t) t.remove();
-}
+function rmTyping() { const t = document.getElementById("aiTyping"); if (t) t.remove(); }
 
 async function sendAI() {
   const inp = document.getElementById("aiIn");
@@ -176,133 +180,57 @@ async function sendAI() {
   addAIMsg("user", txt);
   showTyping();
   document.getElementById("aiQuick").style.display = "none";
-  // Realistic thinking delay
   await new Promise(res => setTimeout(res, 700 + Math.random() * 600));
   const reply = getAIReply(txt);
   rmTyping();
   addAIMsg("ai", reply);
   aiBusy = false;
 }
+function sendAQ(t) { document.getElementById("aiIn").value = t; sendAI(); }
+document.getElementById("aiIn").addEventListener("keydown", e => { if (e.key === "Enter") sendAI(); });
 
-function sendAQ(t) {
-  document.getElementById("aiIn").value = t;
-  sendAI();
-}
-
-document.getElementById("aiIn").addEventListener("keydown", function(e) {
-  if (e.key === "Enter") sendAI();
-});
-
-// ── DAY / NIGHT THEME TOGGLE ──
-function getPreferredTheme() {
-  const saved = localStorage.getItem("jm-theme");
-  if (saved) return saved;
-  return window.matchMedia("(prefers-color-scheme: light)").matches ? "day" : "night";
+// ── THEME TOGGLE ──
+function updateParticleColor(mode) {
+  window._particleColor = mode === "day" ? "rgba(108,99,255,0.35)" : "rgba(108,99,255,0.6)";
+  window._lineColor = mode === "day" ? "rgba(108,99,255,0.1)" : "rgba(108,99,255,0.15)";
 }
 function applyTheme(mode) {
-  if (mode === "day") {
-    document.body.classList.add("day-mode");
-    document.getElementById("theme-icon").textContent = "☀️";
-  } else {
-    document.body.classList.remove("day-mode");
-    document.getElementById("theme-icon").textContent = "🌙";
-  }
+  document.body.classList.toggle("day-mode", mode === "day");
+  document.getElementById("theme-icon").textContent = mode === "day" ? "☀️" : "🌙";
   localStorage.setItem("jm-theme", mode);
-  // Update particles color for day mode
   updateParticleColor(mode);
 }
 function toggleTheme() {
   const isDay = document.body.classList.contains("day-mode");
   applyTheme(isDay ? "night" : "day");
 }
-// Apply on load
-applyTheme(getPreferredTheme());
+applyTheme(localStorage.getItem("jm-theme") || (window.matchMedia("(prefers-color-scheme: light)").matches ? "day" : "night"));
 
-// Auto-switch based on time of day (if no preference saved)
-(function autoTimeTheme() {
-  if (localStorage.getItem("jm-theme")) return; // respect manual choice
-  const hr = new Date().getHours();
-  applyTheme((hr >= 6 && hr < 19) ? "day" : "night");
-})();
-
-// ── PARTICLE COLOR UPDATE FOR DAY/NIGHT ──
-function updateParticleColor(mode) {
-  window._particleColor = mode === "day"
-    ? "rgba(108,99,255,0.35)"
-    : "rgba(108,99,255,0.6)";
-  window._lineColor = mode === "day"
-    ? "rgba(108,99,255,0.1)"
-    : "rgba(108,99,255,0.15)";
-}
-updateParticleColor("night");
-
-// Override drawParticles to use dynamic color
-(function() {
-  // Patch the existing draw loop with color-aware version
-  window._particleColor = "rgba(108,99,255,.6)";
-  window._lineColor = "rgba(108,99,255,";
-})();
-
-// ── MATRIX RAIN (AI Section) ──
+// ── MATRIX RAIN ──
 (function initMatrix() {
   const mc = document.getElementById("matrix-canvas");
   if (!mc) return;
   const mctx = mc.getContext("2d");
-  function resizeMatrix() {
-    const parent = mc.parentElement;
-    mc.width = parent.offsetWidth;
-    mc.height = parent.offsetHeight;
-  }
+  function resizeMatrix() { mc.width = mc.parentElement.offsetWidth; mc.height = mc.parentElement.offsetHeight; }
   resizeMatrix();
   window.addEventListener("resize", resizeMatrix);
   const chars = "01アイウエオカキクケコABCDEF∇σ∫∂λθΣΠ";
   const cols = Math.floor(mc.width / 14);
   const drops = Array(cols).fill(1);
-  function drawMatrix() {
+  setInterval(() => {
     mctx.fillStyle = "rgba(0,0,0,0.05)";
     mctx.fillRect(0, 0, mc.width, mc.height);
     mctx.fillStyle = "#6c63ff";
     mctx.font = "11px JetBrains Mono, monospace";
     drops.forEach((y, i) => {
-      const ch = chars[Math.floor(Math.random() * chars.length)];
-      mctx.fillText(ch, i * 14, y * 14);
+      mctx.fillText(chars[Math.floor(Math.random() * chars.length)], i * 14, y * 14);
       if (y * 14 > mc.height && Math.random() > 0.975) drops[i] = 0;
       drops[i]++;
     });
-  }
-  setInterval(drawMatrix, 60);
+  }, 60);
 })();
 
-// ── CODE RAIN IN PHOTO (subtle) ──
-(function initCodeRain() {
-  const wrap = document.querySelector(".photo-inner");
-  if (!wrap) return;
-  const rainCanvas = document.createElement("canvas");
-  rainCanvas.style.cssText = "position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0.045;border-radius:inherit;";
-  wrap.style.position = "relative";
-  wrap.appendChild(rainCanvas);
-  const rc = rainCanvas.getContext("2d");
-  function resize() { rainCanvas.width = wrap.offsetWidth; rainCanvas.height = wrap.offsetHeight; }
-  resize();
-  const rchars = "01∇σλΣ";
-  const rcols = Math.floor(rainCanvas.width / 10);
-  const rdrops = Array(rcols).fill(1);
-  function drawRain() {
-    rc.fillStyle = "rgba(0,0,0,0.08)";
-    rc.fillRect(0, 0, rainCanvas.width, rainCanvas.height);
-    rc.fillStyle = "#43e97b";
-    rc.font = "9px monospace";
-    rdrops.forEach((y, i) => {
-      const ch = rchars[Math.floor(Math.random() * rchars.length)];
-      rc.fillText(ch, i * 10, y * 10);
-      if (y * 10 > rainCanvas.height && Math.random() > 0.97) rdrops[i] = 0;
-      rdrops[i]++;
-    });
-  }
-  setInterval(drawRain, 80);
-})();
-
-// ── HERO ROLE TYPEWRITER ──
+// ── HERO TYPEWRITER ──
 (function heroTypewriter() {
   const roles = [
     "// Frontend Engineer · React Expert",
@@ -316,70 +244,27 @@ updateParticleColor("night");
   if (!el) return;
   function type() {
     const current = roles[ri];
-    if (!deleting) {
-      el.textContent = current.slice(0, ci + 1);
-      ci++;
-      if (ci === current.length) { deleting = true; setTimeout(type, 2200); return; }
-      setTimeout(type, 55);
-    } else {
-      el.textContent = current.slice(0, ci - 1);
-      ci--;
-      if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; setTimeout(type, 300); return; }
-      setTimeout(type, 28);
-    }
+    el.textContent = current.slice(0, ci + (deleting ? -1 : 1));
+    ci += deleting ? -1 : 1;
+    if (!deleting && ci === current.length) { deleting = true; setTimeout(type, 2200); }
+    else if (deleting && ci === 0) { deleting = false; ri = (ri + 1) % roles.length; setTimeout(type, 300); }
+    else { setTimeout(type, deleting ? 28 : 55); }
   }
   setTimeout(type, 1200);
 })();
 
-// ── BAR FILL GLOW ──
-document.querySelectorAll(".bar-fill,.sk-bar").forEach(bar => {
-  const obs2 = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.animationPlayState = "running";
-        setTimeout(() => e.target.classList.add("glowing"), 1500);
-      }
-    });
-  }, {threshold:.5});
-  obs2.observe(bar);
-});
-
-// ── CONTACT CARD STAGGER ANIMATION ──
-document.querySelectorAll(".contact-card-anim").forEach((card, i) => {
-  card.style.opacity = "0";
-  card.style.transform = "translateY(24px)";
-  card.style.transition = `opacity .5s ease ${i * 0.1}s, transform .5s ease ${i * 0.1}s, border-color .3s, box-shadow .3s`;
-  const obs3 = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = "1";
-        e.target.style.transform = "translateY(0)";
-      }
-    });
-  }, {threshold:.2});
-  obs3.observe(card);
-});
-
-// ── CURSOR TRAIL (AI particle bursts on click) ──
-document.addEventListener("click", function(e) {
+// ── INTERACTIVE SPARKS ──
+document.addEventListener("click", e => {
   for (let i = 0; i < 8; i++) {
     const spark = document.createElement("div");
-    spark.style.cssText = `
-      position:fixed;left:${e.clientX}px;top:${e.clientY}px;
-      width:${4 + Math.random()*5}px;height:${4 + Math.random()*5}px;
-      background:var(--accent);border-radius:50%;pointer-events:none;z-index:9997;
-      transform:translate(-50%,-50%);
-      animation: spark-fade .6s ease forwards;
-    `;
-    const angle = (i / 8) * Math.PI * 2;
-    const dist = 30 + Math.random() * 40;
+    spark.style.cssText = `position:fixed;left:${e.clientX}px;top:${e.clientY}px;width:${4+Math.random()*5}px;height:${4+Math.random()*5}px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9997;transform:translate(-50%,-50%);animation:spark-fade .6s ease forwards;`;
+    const angle = (i / 8) * Math.PI * 2, dist = 30 + Math.random() * 40;
     spark.style.setProperty("--dx", Math.cos(angle) * dist + "px");
     spark.style.setProperty("--dy", Math.sin(angle) * dist + "px");
     document.body.appendChild(spark);
     setTimeout(() => spark.remove(), 650);
   }
 });
-// Add spark keyframe dynamically
 const sparkStyle = document.createElement("style");
 sparkStyle.textContent = "@keyframes spark-fade { 0%{opacity:1;transform:translate(-50%,-50%) scale(1)} 100%{opacity:0;transform:translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0)} }";
 document.head.appendChild(sparkStyle);
