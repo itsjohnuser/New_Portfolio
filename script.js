@@ -94,56 +94,40 @@ function filterBlog(cat,btn){
 const KB = [
   {
     k:["skill","technology","tech stack","know","expertise","use","proficient","tools"],
-    a:"John Mark's core skills are React.js, JavaScript ES6+, HTML5, CSS3, and Python. On the AI/ML side he works with TensorFlow, Scikit-learn, NumPy, and Pandas — plus hands-on LLM & GenAI experience from his C-DAC HPC-AI certification. He also uses PostgreSQL, MySQL, REST APIs, Git, Linux, and Bootstrap."
+    a:"John Mark's core expertise is in Frontend Engineering: JavaScript (ES6+), React.js, jQuery, HTML5, CSS3, Bootstrap, and Tailwind CSS. He's also skilled in UI/UX design translation (Figma, Adobe XD), Performance Optimization (95% speed leap), and tools like Git, Docker, and Linux."
   },
   {
     k:["react","frontend","front end","ui","interface","component","hooks"],
-    a:"John Mark has 1.5+ years of hands-on React.js experience building production-ready responsive web apps at Datagaint IT Services. He's skilled in React Hooks, component architecture, performance optimization, and API integration — and scored 90% in Advanced React on his Meta Front-End Developer certification."
+    a:"With 2+ years of experience, John Mark is a Frontend expert. He architects interactive, mobile-first UIs using React.js and has a proven track record of optimizing page load times from 45s to 2s (a 95% improvement) at Voola Software Solutions."
   },
   {
-    k:["ai","ml","machine learning","tensorflow","artificial intelligence","cdac","hpc","llm","genai","generative"],
-    a:"John Mark holds an Advanced Certificate in HPC & AI from C-DAC — India's premier computing institute. He built real ML models with TensorFlow & Scikit-learn for the AI Ocean Cleanup project (real-time waste image classification). He also has experience with LLMs, Generative AI, and AI agent workflows from his C-DAC coursework."
+    k:["voola","experience","work","job","junior","company","years","professional"],
+    a:"John Mark is currently a Junior Software Engineer at Voola Software Solutions Pvt. Ltd. (since Sep 2025). He also interned there from Jan 2024 to Jan 2025. He's expert at UI development, performance optimization, and custom WordPress theme/plugin engineering."
   },
   {
-    k:["experience","work","job","intern","datagaint","company","years","professional"],
-    a:"He worked as a Front-End Developer at Datagaint IT Services Pvt. Ltd., Vijayawada from July 2023 to February 2025 — about 1.5 years. He built high-performance React apps, integrated REST APIs, reduced response times by 20%, and contributed across the full SDLC including Jasmine automated testing."
+    k:["ai","ml","data","cdac","hpc","visualization","visualizer","ocean"],
+    a:"John Mark completed a Trainee program in HPC & AI at C-DAC Bangalore (Mar–Aug 2025). He developed the AI for Ocean Cleanup Visualizer, optimizing data ingestion scripts by 80% and managing complex spatial data streams."
   },
   {
-    k:["project","portfolio","built","made","amazon","ocean","myntra","movie","littlelemon","exchange"],
-    a:"John Mark's key projects: AI for Ocean Cleanup (TensorFlow ML waste detection), Amazon Clone (full-stack React e-commerce), Littlelemon Restaurant (React), Myntra Clone (UI/CSS), MovieSearch App (API integration), and Exchange Rate Calculator. Each project demonstrates a different skill dimension."
+    k:["project","portfolio","wekeza","chimcare","ocean","littlelemon","built"],
+    a:"Key projects: Wekeza (Fintech platform with live stock data), Chimcare (Commercial service engine across 15 US states), and AI Ocean Cleanup Visualizer. He's also built clones for Amazon and Myntra, and the Littlelemon restaurant app."
   },
   {
-    k:["certif","meta","coursera","microsoft","hackerrank","freecodecamp","grade","score"],
-    a:"His certifications: SOAR AI for Educators (Microsoft, Dec 2025), Meta Front-End Developer Professional (Coursera — 87–100% across all 9 courses including 100% in Version Control & 99% in Intro to Frontend), C-DAC HPC-AI (Aug 2025), Full Stack Web Dev (Udemy, Jan 2023), JS Algorithms (freeCodeCamp), JS Basics (HackerRank)."
+    k:["certif","meta","microsoft","udemy","july","2024","2025","2023"],
+    a:"His certifications include: Meta Front-End Developer Professional (Coursera, July 2024), SOAR – AI for Educators (Microsoft, Dec 2025), and Full Stack Web Development (Udemy, Jan 2023)."
   },
   {
-    k:["hire","why","recommend","best","suitable","good for","fit","candidate","should i","worth"],
-    a:"John Mark brings a rare combination: proven React.js frontend experience (1.5 yrs, 20% API performance gain) + advanced AI/ML expertise (C-DAC HPC-AI certified). He's immediately available, based in Hyderabad, open to onsite/hybrid/remote, and has both technical depth and strong communication skills. Very few freshers have this dual profile!"
+    k:["hire","why","recommend","best","suitable","fit","performance"],
+    a:"You should hire John Mark for his rare mix of high-end UI/UX skills and deep performance engineering. He turned a 45-second data execution into 2 seconds! He's expert in React, Tailwind, and Figma-to-code translation, and is immediately available in Hyderabad."
   },
   {
-    k:["salary","ctc","expect","package","pay","compensation","lpa"],
-    a:"John Mark is open to discussing compensation based on the role, company, and responsibilities. Contact him directly at johnarumulla@gmail.com or +91 8142421367 to have that conversation."
+    k:["education","degree","college","btech","cgpa","audisankara"],
+    a:"He holds a B.Tech in Computer Science and Engineering from Audisankara Institute of Technology (2019–2023) with a CGPA of 7.1/10.0."
   },
   {
-    k:["contact","email","phone","reach","linkedin","connect","number","mobile"],
-    a:"You can reach John Mark at: 📧 johnarumulla@gmail.com | 📱 +91 8142421367 | 💼 linkedin.com/in/johnmarkarumulla. He's based in Hyderabad and ready to connect immediately!"
-  },
-  {
-    k:["education","degree","college","btech","university","cgpa","grade","audisankara","gudur"],
-    a:"John Mark holds a B.Tech in Computer Science & Engineering from Audisankara Institute of Technology, Gudur, Andhra Pradesh (2019–2023), CGPA 7.1/10. He also completed an Advanced Certificate in HPC & AI at C-DAC in August 2025 — a prestigious post-graduate level program."
-  },
-  {
-    k:["available","join","notice","start","when","location","hyderabad","remote","onsite","hybrid"],
-    a:"John Mark is immediately available — no notice period! He's based in Hyderabad, India, and is open to onsite, hybrid, or fully remote positions anywhere in India."
-  },
-  {
-    k:["database","sql","mysql","postgresql","backend","server","api","rest"],
-    a:"John Mark works with MySQL and PostgreSQL for databases, and has solid REST API integration skills from his internship at Datagaint (where he optimized response times by 20%). He's also familiar with Node.js basics and full-stack architecture from his Udemy Full Stack course."
-  },
-  {
-    k:["python","numpy","pandas","scikit","data","preprocessing","pipeline"],
-    a:"John Mark uses Python for ML and data engineering tasks — NumPy and Pandas for preprocessing, Scikit-learn for model building, and TensorFlow for deep learning. His AI Ocean Cleanup project demonstrates clean, testable ML pipelines built from scratch."
-  },
+    k:["contact","email","phone","reach","linkedin","connect","number"],
+    a:"Reach John Mark at: 📧 johnarumulla@gmail.com | 📱 +91 8142421367 | 💼 linkedin.com/in/johnmarkarumulla. He's based in Hyderabad and ready to start immediately!"
+  }
 ];
 
 function getAIReply(txt) {
@@ -152,9 +136,9 @@ function getAIReply(txt) {
     if (entry.k.some(k => t.includes(k))) return entry.a;
   }
   const fallbacks = [
-    "Great question! John Mark is a Software Engineer specializing in React.js and AI/ML, based in Hyderabad with 1.5+ years of experience. He's immediately available for full-time roles. Try asking about his skills, projects, certifications, or why you should hire him!",
-    "I'd be happy to help! John Mark combines React.js frontend expertise with C-DAC-certified AI/ML skills — a rare combo for a fresher. Ask me about his technical skills, work experience, projects, or how to get in touch.",
-    "John Mark is an innovative developer ready to join your team immediately! Ask me: 'What are his skills?', 'Tell me about his AI projects', 'Why should I hire him?', or 'How do I contact him?'"
+    "Great question! John Mark is a Frontend Engineer specializing in React.js and UI optimization, based in Hyderabad with 2+ years of experience. He's immediately available for full-time roles. Try asking about his skills, projects, certifications, or why you should hire him!",
+    "I'd be happy to help! John Mark combines React.js frontend expertise with high-concurrency data visualization skills. Ask me about his technical skills, work experience at Voola, projects like Wekeza, or how to get in touch.",
+    "John Mark is a performance-driven developer ready to join your team immediately! Ask me: 'What are his skills?', 'Tell me about his Voola experience', 'Why should I hire him?', or 'How do I contact him?'"
   ];
   return fallbacks[Math.floor(Math.random() * fallbacks.length)];
 }
@@ -321,11 +305,11 @@ updateParticleColor("night");
 // ── HERO ROLE TYPEWRITER ──
 (function heroTypewriter() {
   const roles = [
-    "// Software Engineer · React & AI Dev",
-    "// Frontend Developer · React.js",
-    "// AI/ML Engineer · TensorFlow",
-    "// Full Stack Developer · Python",
-    "// C-DAC HPC-AI Graduate · LLMs"
+    "// Frontend Engineer · React Expert",
+    "// UI/UX Specialist · Figma & XD",
+    "// Performance Engineer · 95% Speedup",
+    "// Data Visualization · Python & HPC",
+    "// React.js Architect · Mobile-First"
   ];
   let ri = 0, ci = 0, deleting = false;
   const el = document.getElementById("heroRole");
