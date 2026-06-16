@@ -94,35 +94,35 @@ function filterBlog(cat,btn){
 const KB = [
   {
     k:["skill","technology","tech stack","know","expertise","use","proficient","tools"],
-    a:"John Mark's core expertise is in Frontend Engineering: JavaScript (ES6+), React.js, jQuery, HTML5, CSS3, Bootstrap, and Tailwind CSS. He's also skilled in UI/UX design translation (Figma, Adobe XD), Performance Optimization (95% speed leap), and tools like Git, Docker, and Linux."
+    a:"John Mark's core expertise is in Frontend Engineering: JavaScript (ES6+), React.js, jQuery, HTML5, CSS3, Bootstrap, and Tailwind CSS. He's also skilled in UI/UX design translation (Figma, Adobe XD), Performance Engineering (95% speed leap), and tools like Git, Docker, and Linux."
   },
   {
-    k:["react","frontend","front end","ui","interface","component","hooks"],
-    a:"With 2+ years of experience, John Mark is a Frontend expert. He architects interactive, mobile-first UIs using React.js and has a proven track record of optimizing page load times from 45s to 2s (a 95% improvement) at Voola Software Solutions."
+    k:["react","frontend","front end","ui","interface","component","hooks","tailwind"],
+    a:"With 2+ years of experience, John Mark is a specialized Frontend Engineer. He architects interactive, mobile-first UIs using React.js and Tailwind CSS, and has a proven track record of optimizing page load times from 45s to 2s (a 95% speed leap) at Voola Software Solutions Pvt. Ltd."
   },
   {
-    k:["voola","experience","work","job","junior","company","years","professional"],
-    a:"John Mark is currently a Junior Software Engineer at Voola Software Solutions Pvt. Ltd. (since Sep 2025). He also interned there from Jan 2024 to Jan 2025. He's expert at UI development, performance optimization, and custom WordPress theme/plugin engineering."
+    k:["voola","experience","work","job","junior","company","years","professional","voola solutions"],
+    a:"John Mark is a Junior Software Engineer at Voola Software Solutions Pvt. Ltd. (since Sep 2025). He also interned there from Jan 2024 to Jan 2025. He's expert at UI development, 95% performance optimization, and custom WordPress engineering."
   },
   {
-    k:["ai","ml","data","cdac","hpc","visualization","visualizer","ocean"],
-    a:"John Mark completed a Trainee program in HPC & AI at C-DAC Bangalore (Mar–Aug 2025). He developed the AI for Ocean Cleanup Visualizer, optimizing data ingestion scripts by 80% and managing complex spatial data streams."
+    k:["ai","ml","data","cdac","hpc","visualization","visualizer","ocean","bangalore"],
+    a:"John Mark completed a Trainee program in HPC & AI at C-DAC Bangalore (Mar–Aug 2025). He developed the AI for Ocean Cleanup Visualizer, optimizing ingestion scripts by 80% and managing complex spatial data visualization."
   },
   {
-    k:["project","portfolio","wekeza","chimcare","ocean","littlelemon","built"],
-    a:"Key projects: Wekeza (Fintech platform with live stock data), Chimcare (Commercial service engine across 15 US states), and AI Ocean Cleanup Visualizer. He's also built clones for Amazon and Myntra, and the Littlelemon restaurant app."
+    k:["project","portfolio","wekeza","chimcare","ocean","komhar","built","stock"],
+    a:"Featured projects: Komhar (Professional Services), Wekeza (Multilingual Fintech with live stock data), Chimcare (US Commercial Infrastructure across 15 states), and AI Ocean Cleanup Visualizer."
   },
   {
     k:["certif","meta","microsoft","udemy","july","2024","2025","2023"],
-    a:"His certifications include: Meta Front-End Developer Professional (Coursera, July 2024), SOAR – AI for Educators (Microsoft, Dec 2025), and Full Stack Web Development (Udemy, Jan 2023)."
+    a:"His certifications: Meta Front-End Developer Professional (Coursera, July 2024), SOAR – AI for Educators (Microsoft, Dec 2025), and Full Stack Web Development (Udemy, Jan 2023)."
   },
   {
-    k:["hire","why","recommend","best","suitable","fit","performance"],
-    a:"You should hire John Mark for his rare mix of high-end UI/UX skills and deep performance engineering. He turned a 45-second data execution into 2 seconds! He's expert in React, Tailwind, and Figma-to-code translation, and is immediately available in Hyderabad."
+    k:["hire","why","recommend","best","suitable","fit","performance","speed"],
+    a:"You should hire John Mark for his rare mix of high-end UI/UX skills and rigorous performance engineering. He achieved a 95% speed leap in data execution! Expert in React, Tailwind, and Figma-to-code translation, based in Hyderabad."
   },
   {
-    k:["education","degree","college","btech","cgpa","audisankara"],
-    a:"He holds a B.Tech in Computer Science and Engineering from Audisankara Institute of Technology (2019–2023) with a CGPA of 7.1/10.0."
+    k:["education","degree","college","btech","cgpa","audisankara","ap"],
+    a:"He holds a B.Tech in Computer Science and Engineering from Audisankara Institute of Technology, AP (2019–2023) with a CGPA of 7.1/10.0."
   },
   {
     k:["contact","email","phone","reach","linkedin","connect","number"],
@@ -137,7 +137,7 @@ function getAIReply(txt) {
   }
   const fallbacks = [
     "Great question! John Mark is a Frontend Engineer specializing in React.js and UI optimization, based in Hyderabad with 2+ years of experience. He's immediately available for full-time roles. Try asking about his skills, projects, certifications, or why you should hire him!",
-    "I'd be happy to help! John Mark combines React.js frontend expertise with high-concurrency data visualization skills. Ask me about his technical skills, work experience at Voola, projects like Wekeza, or how to get in touch.",
+    "I'd be happy to help! John Mark combines React.js frontend expertise with high-concurrency data visualization skills. Ask me about his technical skills, work experience at Voola, projects like Komhar, or how to get in touch.",
     "John Mark is a performance-driven developer ready to join your team immediately! Ask me: 'What are his skills?', 'Tell me about his Voola experience', 'Why should I hire him?', or 'How do I contact him?'"
   ];
   return fallbacks[Math.floor(Math.random() * fallbacks.length)];
